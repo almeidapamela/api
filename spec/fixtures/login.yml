@@ -1,0 +1,35 @@
+---
+- title: E-mail válido e senha inválida
+  payload:
+    email: pamela@gmail.com
+    password: '12345'
+  code: 401
+  error: Unauthorized
+- title: E-mail válido e senha em branco
+  payload:
+    email: pamela@gmail.com
+    password: ''
+  code: 412
+  error: required password
+- title: E-mail válido e sem senha
+  payload:
+    email: pamela1@gmail.com
+  code: 412
+  error: required password
+- title: E-mail inexistente e senha válida
+  payload:
+    email: pamela1@gmail.com
+    password: '123456'
+  code: 401
+  error: Unauthorized
+- title: E-mail em branco e senha válida
+  payload:
+    email: ''
+    password: '123456'
+  code: 412
+  error: required email
+- title: Sem e-mail e senha válida
+  payload:
+    password: '123456'
+  code: 412
+  error: required email
